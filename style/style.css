@@ -5,4 +5,12 @@
 body{
     margin: 0;
     scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
 }
