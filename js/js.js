@@ -1,11 +1,15 @@
 
-for (let i = 0; i < 256; i++){
-    let div = document.createElement("div");
-    div.style.height = "50px"
-    div.style.width = "50px"
-    div.style.border = "1px solid black"
-    document.querySelector(".container").appendChild(div)
+function boucleDiv(repeat){
+    for (let i = 0; i < repeat; i++){
+        let div = document.createElement("div");
+        div.style.height = "50px"
+        div.style.width = "50px"
+        div.style.border = "1px solid black"
+        document.querySelector(".container").appendChild(div)
+    }
 }
+
+let nombreDiv = boucleDiv(256)
 
 function couleur() {
     let div = document.querySelectorAll(".container div")
@@ -14,7 +18,6 @@ function couleur() {
             div.style.backgroundColor = "red"
         })
     });
-    console.log(div)
 }
 
 
@@ -34,13 +37,7 @@ boutton.addEventListener("click", () => {
         div.remove()
     });
 
-    for (let i = 0; i < value; i++){
-        let div = document.createElement("div");
-        div.style.height = "50px"
-        div.style.width = "50px"
-        div.style.border = "1px solid purple"
-        document.querySelector(".container").appendChild(div)
-    }
+    boucleDiv(value)
 
     couleur();
 
