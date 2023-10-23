@@ -13,10 +13,12 @@ function makeRows(rows, cols) {
 makeRows(16, 16)
 
 function couleur() {
+
     let div = document.querySelectorAll(".container div")
     div.forEach(div => {
         div.addEventListener("mouseover", () => {
-            div.style.backgroundColor = "red"
+            let multiCouleur = Math.floor(Math.random() * 999999)
+            div.style.backgroundColor = `#${multiCouleur}`
         })
     });
 }
