@@ -1,15 +1,16 @@
+const container = document.querySelector(".container");
 
-function boucleDiv(repeat){
-    for (let i = 0; i < repeat; i++){
-        let div = document.createElement("div");
-        div.style.height = "50px"
-        div.style.width = "50px"
-        div.style.border = "1px solid black"
-        document.querySelector(".container").appendChild(div)
-    }
-}
+function makeRows(rows, cols) {
+  container.style.setProperty('--grid-rows', rows);
+  container.style.setProperty('--grid-cols', cols);
+  for (i = 0; i < (rows * cols); i++) {
+    let cell = document.createElement("div");
+    cell.innerText = (i + 1);
+    container.appendChild(cell).className = "grid-item";
+  };
+};
 
-let nombreDiv = boucleDiv(256)
+makeRows(16, 16)
 
 function couleur() {
     let div = document.querySelectorAll(".container div")
@@ -37,7 +38,7 @@ boutton.addEventListener("click", () => {
         div.remove()
     });
 
-    boucleDiv(value)
+    makeRows(value, value)
 
     couleur();
 
